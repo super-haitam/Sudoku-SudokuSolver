@@ -106,7 +106,8 @@ def draw_help():
                     "To write a number on an empty cell, click on it, then press the number.",
                     "To erase a number you wrote, press Delete or Backspace.",
                     "This game is basic and is not a fast one so wait a second if it seems not to respond.",
-                    "You might need to press the number more than once."
+                    "You might need to press the number more than once.",
+                    "This program uses Backtracking to solve the sudoku grid."
                     ]
 
     font = pygame.font.SysFont("comicsans", 15)
@@ -285,12 +286,17 @@ num_keys = {
     9: pygame.K_9
 }
 
+# Pygame Clock
+clock = pygame.time.Clock()
+
 # Mainloop
 running = True
 is_started = False
 is_help = False
 is_solving = False
 while running:
+    clock.tick(15)
+    
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
